@@ -3,16 +3,6 @@ all: report.html report2.pdf
 clean:
 	rm -f words.txt histogram.tsv histogram.png report.md report.html barplot_dat.tsv barplot.png report2.pdf
 
-report_type2: report2.pdf
-
-clean_type2: 
-	rm -f barplot_dat.tsv barplot.png report2.pdf
-
-report_type1: report.html
-
-clean_type1:
-	rm -f histogram.tsv histogram.png report.md report.html
-
 report2.pdf: report2.Rmd barplot.png vowels_count.tsv
 	Rscript -e 'rmarkdown::render("$<")'
 

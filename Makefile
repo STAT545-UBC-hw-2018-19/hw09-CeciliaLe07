@@ -13,7 +13,7 @@ report_type1: report.html
 clean_type1:
 	rm -f histogram.tsv histogram.png report.md report.html
 
-report2.pdf: report2.Rmd barplot.png
+report2.pdf: report2.Rmd barplot.png vowels_count.tsv
 	Rscript -e 'rmarkdown::render("$<")'
 
 report.html: report.rmd histogram.png
@@ -23,8 +23,11 @@ barplot.png: barplot.R words.txt
 	Rscript $<
 
 histogram.png: histogram.tsv
-	Rscript -e 'library(ggplot2); qplot(Length, Freq, data=read.delim("$<")); ggsave("$@")'
+	Rscript -e 'ggplot2::qplot(Length, Freq, data=read.delim("$<")); ggplot2::ggsave("$@")'
 	rm Rplots.pdf
+
+vowels_count.tsv: vowels.py words.txt
+	python vowels.py
 
 histogram.tsv: histogram.r words.txt
 	Rscript $<

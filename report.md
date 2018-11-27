@@ -1,7 +1,7 @@
 ---
 title: "English Word lengths"
 author: "Jenny Bryan"
-date: "25 noviembre, 2018"
+date: "27 noviembre, 2018"
 output:
   html_document:
     keep_md: yes

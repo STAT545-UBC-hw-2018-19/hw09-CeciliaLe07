@@ -3,11 +3,21 @@ all: report.html report2.pdf
 clean:
 	rm -f words.txt histogram.tsv histogram.png report.md report.html barplot_dat.tsv barplot.png report2.pdf
 
-report2.pdf: report2.Rmd barplot.png vowels_count.tsv
-	Rscript -e 'rmarkdown::render("$<")'
+report_type2: report2.pdf
+
+clean_type2: 
+	rm -f vowels_count.tsv barplot_dat.tsv barplot.png report2.pdf
+
+report_type1: report.html
+
+clean_type1:
+	rm -f histogram.png report.md report.html
+
+report2.pdf: report2.Rmd barplot.png vowels_count.tsv barplot.png histogram.tsv
+	Rscript -e 'Sys.setenv(RSTUDIO_PANDOC="C:/Program Files/RStudio/bin/pandoc"); rmarkdown::render("$<")'
 
 report.html: report.rmd histogram.png
-	Rscript -e 'rmarkdown::render("$<")'
+	Rscript -e 'Sys.setenv(RSTUDIO_PANDOC="C:/Program Files/RStudio/bin/pandoc"); rmarkdown::render("$<")'
 
 barplot.png: barplot.R words.txt
 	Rscript $<

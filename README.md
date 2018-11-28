@@ -27,6 +27,11 @@ These changes can be watched at the following files:
 [vowels.py](https://github.com/STAT545-UBC-students/hw09-CeciliaLe07/blob/master/vowels.py) | The python script that produces the output [vowels_count.tsv](https://github.com/STAT545-UBC-students/hw09-CeciliaLe07/blob/master/vowels_count.tsv) |
 |[report2.Rmd](https://github.com/STAT545-UBC-students/hw09-CeciliaLe07/blob/master/report2.Rmd) | The `Rmarkdown` file that generates [the second report in pdf format](https://github.com/STAT545-UBC-students/hw09-CeciliaLe07/blob/master/report2.pdf)|
 
+## Sources to get extra help
+
++ https://stackoverflow.com/questions/28432607/pandoc-version-1-12-3-or-higher-is-required-and-was-not-found-r-shiny
+
+
 
 <p align="center">
 <img src="https://media.giphy.com/media/26AHyxxCItIbFijLO/giphy.gif" width="300" height="150"/>
